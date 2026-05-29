@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – Secure Login</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Log In</h1>
+
+    <% if (flash) { %>
+      <div class="flash"><p>&#10003; <%= flash %></p></div>
+    <% } %>
+
+    <% if (errors.length > 0) { %>
+      <div class="errors">
+        <% errors.forEach(e => { %><p>&#x26A0; <%= e.msg %></p><% }) %>
+      </div>
+    <% } %>
+
+    <form method="POST" action="/login" novalidate>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username"
+             autocomplete="username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"
+             autocomplete="current-password" required />
+
+      <button type="submit">Log In</button>
+    </form>
+
+    <div class="link-row">
+      No account yet? <a href="/register">Register</a>
+    </div>
+  </div>
+</body>
+</html>
