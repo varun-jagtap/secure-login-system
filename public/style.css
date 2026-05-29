@@ -1,0 +1,57 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f0f2f5;
+  color: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.1);
+  padding: 2rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+}
+h1 { font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center; }
+label { display: block; font-size: .875rem; font-weight: 600; margin-bottom: .25rem; }
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%; padding: .6rem .8rem; border: 1px solid #ccc;
+  border-radius: 6px; font-size: 1rem; margin-bottom: 1rem;
+  transition: border-color .2s;
+}
+input:focus { outline: none; border-color: #4a6cf7; }
+button[type="submit"] {
+  width: 100%; padding: .75rem; background: #4a6cf7; color: #fff;
+  border: none; border-radius: 6px; font-size: 1rem; font-weight: 600;
+  cursor: pointer; transition: background .2s;
+}
+button[type="submit"]:hover { background: #3a5ce5; }
+.errors {
+  background: #fef2f2; border: 1px solid #fca5a5; border-radius: 6px;
+  padding: .75rem 1rem; margin-bottom: 1rem;
+}
+.errors p { color: #b91c1c; font-size: .875rem; }
+.flash {
+  background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px;
+  padding: .75rem 1rem; margin-bottom: 1rem;
+}
+.flash p { color: #166534; font-size: .875rem; }
+.link-row { text-align: center; margin-top: 1rem; font-size: .875rem; }
+.link-row a { color: #4a6cf7; text-decoration: none; font-weight: 600; }
+.link-row a:hover { text-decoration: underline; }
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem;
+}
+nav span { font-size: .9rem; color: #555; }
+nav form button {
+  width: auto; padding: .4rem .9rem; font-size: .875rem;
+  background: #ef4444;
+}
+nav form button:hover { background: #dc2626; }

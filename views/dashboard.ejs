@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard – Secure Login</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="card">
+    <nav>
+      <span>Logged in as <strong><%= username %></strong></span>
+      <form method="POST" action="/logout">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+        <button type="submit">Log Out</button>
+      </form>
+    </nav>
+
+    <h1>&#127968; Dashboard</h1>
+    <p style="margin-top:1rem;color:#555;">
+      Welcome, <strong><%= username %></strong>! You are authenticated.
+      This page is only accessible when you are logged in.
+    </p>
+  </div>
+</body>
+</html>

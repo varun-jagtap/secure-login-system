@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – Secure Login</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Create Account</h1>
+
+    <% if (errors.length > 0) { %>
+      <div class="errors">
+        <% errors.forEach(e => { %><p>&#x26A0; <%= e.msg %></p><% }) %>
+      </div>
+    <% } %>
+
+    <form method="POST" action="/register" novalidate>
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username"
+             value="<%= formData.username || '' %>"
+             autocomplete="username" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email"
+             value="<%= formData.email || '' %>"
+             autocomplete="email" required />
+
+      <label for="password">Password <small>(min 8 characters)</small></label>
+      <input type="password" id="password" name="password"
+             autocomplete="new-password" required />
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" name="confirmPassword"
+             autocomplete="new-password" required />
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="link-row">
+      Already have an account? <a href="/login">Log in</a>
+    </div>
+  </div>
+</body>
+</html>
